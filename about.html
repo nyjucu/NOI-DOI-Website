@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noidoi Games</title>
+    <link rel="stylesheet" href="about.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav id = "nav">
+            <a href="home.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-chevron-right" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a onclick="window.location.href='projects.html'">PROJECTS</a></li>
+                    <li><a onclick="window.location.href='about.html'">ABOUT</a></li>
+                    <li><a onclick="window.location.href='news.html'">NEWS</a></li>
+                    <li><a onclick="window.location.href='store.html'">STORE</a></li>
+                    <li><a onclick="window.location.href='contact.html'">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-ellipsis-v" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <section>
+        <div class = "about"> 
+            <h1 id = "text">It ain't about us<br>It's about IU</h1>
+            <span id = "circle"></span>
+        </div>
+    </section>
+
+    <section>
+        <div class = "end">
+            <div class = "icons">
+                <a href="home.html"><img src="images/logo2.png"></a>
+                <i class="fab fa-github" onclick = "window.open('https://github.com/Noidoi-Games','_blank')"></i>
+            </div>
+
+            <p>© 2022 Noidoi Games, Inc. All Rights Reserved.</p>
+        </div>
+    </section>
+    
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        var circle = document.getElementById("circle");
+        var text = document.getElementById("text");
+        var r = 100, g = 150, b = 200;
+
+    var intervalId = window.setInterval(function(){
+
+        circle.style.borderColor = 'rgb( '+r+', '+g+', '+b+')';
+        text.style.color = 'rgb( '+r+', '+g+', '+b+')';
+
+        r = ( r*2 ) % 155 + 50;
+        g = ( g*3 ) % 155 + 50;
+        b = ( b*4 ) % 155 + 50;
+    }, 270);
+
+    </script>
+
+    <script>
+
+        var nav = document.getElementById("nav");
+        function scroolAtTop(){
+            nav.style.transitionDuration = "0.2s";
+
+            if( window.pageYOffset > 0 ){
+                nav.style.backgroundColor = "rgba(23, 23, 23, 100)";
+            }
+            else nav.style.backgroundColor = "rgba(23, 23, 23, 0)";
+        }
+
+        var scroolInterval = setInterval(scroolAtTop, 0);
+
+        function toTop(){
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

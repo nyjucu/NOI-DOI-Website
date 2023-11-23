@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noidoi Games</title>
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section class="header">
+        <video playsinline autoplay muted loop poster="images/duck2.PNG">
+            <source src="videos/duck.mp4" type="video/mp4">
+        </video>
+        
+        <nav id = "nav">
+            <a href="home.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-chevron-right" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a onclick="window.location.href='projects.html'">PROJECTS</a></li>
+                    <li><a onclick="window.location.href='about.html'">ABOUT</a></li>
+                    <li><a onclick="window.location.href='news.html'">NEWS</a></li>
+                    <li><a onclick="window.location.href='store.html'">STORE</a></li>
+                    <li><a onclick="window.location.href='contact.html'">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-ellipsis-v" onclick="showMenu()"></i>
+        </nav>
+
+        <div class = "text-box">
+            <h1>World's Smallest Unofficial Game Studio</h1>
+            <p>Using the world's smallest game engine developed by us.</p>
+            <a href="#presentation" class="visit-btn">Visit Us</a>
+        </div>
+    </section>
+
+    <!------Members Presentation------>
+
+    <section class = "presentation" id = "presentation" href="presentation">
+        <h1>Our Team</h1>
+        
+        <div class = "row" style="width:60%">
+
+            <div class = "member-col">
+                <a><img src="images/levi.png"></a>
+                <h2>MIPSAN</h2> 
+                <p>Game Developer</p>
+                <p>Render and Sound Engineer</p>
+                <p>Game and Level Designer</p>
+            </div>
+
+            <div class = "member-col">
+                <a><img src="images/dazai.jpg"></a>
+                <h2>NYJUCU</h2>
+                <p>Game and Story Designer</p>
+                <p>Concept and Texture Artist</p>
+                <p>Web Developer</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class = "games">
+                <img src="images/duck4.png" onclick="document.location='projects.html#duck-game'"></img>
+            
+                <div class = "text">
+                    <h1>DUCK!</h1>
+                    <a href="games/duck.zip" download ><p>download</p></a>
+                </div>        
+        </div>
+        
+        <div class = "games">
+            <img src="images/killtheplayer4.png" onclick="window.location.href='projects.html'"></img>
+        
+            <div class = "text">
+                <h1>Kill The Player</h1>
+                <a onclick="window.location.href='projects.html'"><p>in progress</p></a>
+            </div>        
+        </div>
+    </section>
+
+    <section>
+        <div class = "end">
+            <div class = "icons">
+                <a href="home.html"><img src="images/logo2.png"></a>
+                <i class="fab fa-github" onclick = "window.open('https://github.com/Noidoi-Games','_blank')"></i>
+            </div>
+
+            <p>© 2022 Noidoi Games, Inc. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!------JavaScript for Toggle Menu------>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+        } // End if
+    });
+    });
+    </script>
+
+    <script>
+
+        var nav = document.getElementById("nav");
+
+        function scroolAtTop(){
+            nav.style.transitionDuration = "0.2s";
+
+            if( window.pageYOffset > 0 ){
+                nav.style.backgroundColor = "rgba(23, 23, 23, 100)";
+            }
+            else nav.style.backgroundColor = "rgba(23, 23, 23, 0)";
+        }
+
+        var checkYOffsetInterval = setInterval(scroolAtTop, 0);
+
+        function toTop(){
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+
+</html>

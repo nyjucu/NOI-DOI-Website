@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noidoi Games</title>
+    <link rel="stylesheet" href="news.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav id = "nav">
+            <a href="home.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-chevron-right" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a onclick="window.location.href='projects.html'">PROJECTS</a></li>
+                    <li><a onclick="window.location.href='about.html'">ABOUT</a></li>
+                    <li><a onclick="window.location.href='news.html'">NEWS</a></li>
+                    <li><a onclick="window.location.href='store.html'">STORE</a></li>
+                    <li><a onclick="window.location.href='contact.html'">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-ellipsis-v" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <section class = "news">
+        <div class = "new">
+            <p>5/5/2022: About and Contact pages are completed but open for improvement</p>
+        </div>
+        <div class = "new">
+            <p>5/5/2022: Kill the Player demo downloadable from the projects page</p>
+        </div>
+        <div class = "new">
+            <p>3/12/2022: Website's store page is completed but open for improvement</p>
+        </div>
+
+        <div class = "new">
+            <p>2/12/2022: Website's projects page is completed but open for improvement</p>
+        </div>
+
+        <div class = "new">
+            <p>2/7/2022: Chapter one for 'Kill the Player' is officially in development</p>
+        </div>
+
+        <div class = "new">
+            <p>2/5/2022: Website's news page is completed but open for improvement</p>
+        </div>
+
+        <div class = "new">
+            <p>2/4/2022: Duck! the game is downloadable directly from website</p>
+        </div>
+    
+        <div class = "new" id = "last">
+            <p>2/2/2022: Website homepage is completed but open to improvement</p>
+        </div>
+    </section>
+
+    <section>
+        <div class = "end">
+            <div class = "icons">
+                <a href="home.html"><img src="images/logo2.png"></a>
+                <i class="fab fa-github" onclick = "window.open('https://github.com/Noidoi-Games','_blank')"></i>
+            </div>
+
+            <p>© 2022 Noidoi Games, Inc. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

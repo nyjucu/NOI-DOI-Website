@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noidoi Games</title>
+    <link rel="stylesheet" href="projects.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav id = "nav">
+            <a href="home.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-chevron-right" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a onclick = "window.location.href='projects.html'">PROJECTS</a></li>
+                    <li><a onclick = "window.location.href='about.html'">ABOUT</a></li>
+                    <li><a onclick = "window.location.href='news.html'">NEWS</a></li>
+                    <li><a onclick = "window.location.href='store.html'">STORE</a></li>
+                    <li><a onclick = "window.location.href='contact.html'">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-ellipsis-v" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <section class = "games" id = "ktp-game">
+        <!---<a href = "#duck-game" id = "next-sect-btn" onclick = "nextGame()">Next Game</a>--->
+
+        <div class = "info">
+            <div class = 'images'>
+                <img src = "images/man-frame-5.png" id = "info-img-2"></img>
+                
+                <div class = "page">
+                    <img src = "images/man-frame-9.png" id = "info-img"></img>
+                    <img src = "images/man-frame-9.png" id = "info-img-3"></img>
+
+                    <p>
+                        Taiya is an insular country guided by the people's belief in gods. The Empire, as the taiyanese 
+                        call it, is governed by the Mastifs, a group of seven people that will fight in their gods' name. 
+                        But the world is far from being perfect.
+                    </p>
+
+                </div>
+            </div>
+            
+            <h1>The World</h1>
+        </div>
+
+        <div class = "info">
+            <div class = 'images'>
+                <img src = "images/man-frame-5.png" id = "info-img-2"></img>
+
+                <div class = "page">
+                    <img src = "images/man-frame-9.png" id = "info-img"></img>
+                    <img src = "images/man-frame-9.png" id = "info-img-3"></img>
+
+                    <p>
+                        In this world, you are a god and, because of greed, you decide to live in it. For that to happen,
+                        you have to share life with one of its citizens. Unfortunately, it didn't go as you intended.
+                    </p>
+                </div>
+            </div>
+
+            <h1>You Can Change It All</h1>
+        </div>
+
+        <div class = "info">
+            <div class = 'images'>
+                <img src = "images/man-frame-5.png" id = "info-img-2"></img>
+
+                <div class = "page">
+                    <img src = "images/man-frame-9.png" id = "info-img"></img>
+                    <img src = "images/man-frame-9.png" id = "info-img-3"></img>
+
+                    <p>
+                        Your decisions matter. The dialogue and the actions you take can change relations, perspectives 
+                        and events. But be careful, since it can't always happen as you want.
+                    </p>
+                </div>
+            </div>
+
+            <h1>Decisions, Decisions</h1>
+        </div>
+
+        <div class = "info">
+            <div class = 'images'>
+                <img src = "images/man-frame-5.png" id = "info-img-2"></img>
+
+                <div class = "page">
+                    <img src = "images/man-frame-9.png" id = "info-img"></img>
+                    <img src = "images/man-frame-9.png" id = "info-img-3"></img>
+
+                    <p>
+                        This game will be released when Chapter I is finished. Between chapters the game will receive 
+                        performance updates or additions to the anteriour chapters.
+                    </p>
+                </div>
+            </div>
+            
+            <h1>Chapters</h1>
+        </div>
+
+        <video controls id = "ktp-video">
+            <source src="videos/killtheplayer2.mp4" type="video/mp4">
+        </video>
+
+        <img src = "images/ktp-logo2.png" id = "ktp-logo"></img>
+        <img src = "images/ktp-bg.png" id = "ktp-bg"> </img>
+        
+        <img src = "images/cherry.png" id = "cherry"></img>
+        <img src = "images/cherry.png" id = "cherry2"></img>
+        <img src = "images/cherry.png" id = "cherry3"></img>
+
+        <audio>
+            <source src="audios/sound.wav" id = "sound"></source>
+            <source src="audios/sound.wav"></source>
+        </audio>
+    </section>
+
+    <section class = "downloads" id = "ktp-down">
+        <a href="games/killtheplayer.zip" download ><p>download demo</p></a>
+    </section>
+
+    <section>
+        <div class = "end">
+            <div class = "icons">
+                <a href="home.html"><img src="images/logo2.png"></a>
+                <i class="fab fa-github" onclick = "window.open('https://github.com/Noidoi-Games','_blank')"></i>
+            </div>
+
+            <p>© 2022 Noidoi Games, Inc. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        ;(function(){
+        var c = document.getElementById('info-img');
+        function addAnim() {
+            c.classList.add('animated');
+            // remove the listener, no longer needed
+            c.removeEventListener('mouseover', addAnim);
+        };
+        // listen to mouseover for the container
+        c.addEventListener('mouseover', addAnim);
+        })();
+    </script>
+
+    <script>
+        var c = document.getElementById('images-cl');
+
+        function p() {
+            alret();
+            var pp = document.getElementById('info-p');
+            pp.style.opacity = 1;
+            pp.style.transitionDuration = 0.1;
+        };
+
+        function p2() {
+            var pp = document.getElementById('info-p');
+            pp.style.opacity = 0;
+            pp.style.transitionDuration = 0.1;
+        };
+
+        c.addEventListener('mouseover', p);
+        c.addEventListener('mouseout', p2);
+    </script>
+
+    <!---<script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        function nextGame() {
+            var elementTarget = document.getElementById("ktp-down");
+
+            if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight - 150)) {
+                window.location = '#ktp-game';
+            }
+        }
+    </script>--->
+
+    <script>
+        window.addEventListener( 'scroll', function(){
+            var elementTarget = document.getElementById("ktp-game");
+
+            if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight - 150)) {
+                document.getElementById("next-sect-btn").style.opacity = '0';
+            }
+            else {
+                document.getElementById("next-sect-btn").style.opacity = '1';
+            }
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    <script>
+    $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+        } // End if
+    });
+    });
+    </script>
+</body>
+
+</html>

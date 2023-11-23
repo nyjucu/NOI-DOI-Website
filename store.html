@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noidoi Games</title>
+    <link rel="stylesheet" href="store.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav id = "nav">
+            <a href="home.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-chevron-right" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a onclick="window.location.href='projects.html'">PROJECTS</a></li>
+                    <li><a onclick="window.location.href='about.html'">ABOUT</a></li>
+                    <li><a onclick="window.location.href='news.html'">NEWS</a></li>
+                    <li><a onclick="window.location.href='store.html'">STORE</a></li>
+                    <li><a onclick="window.location.href='contact.html'">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-ellipsis-v" onclick="showMenu()"></i>
+        </nav>
+
+        <div>
+            <div class = "row">
+                <div class="col-2">
+                    <h1>NOIDOI Games</h1>
+                    <p>Unofficial Store</p>
+                    <a href = "#products" class = "btn">Explore Now &#8594</a>
+                </div>
+                
+                <div class="col-2" id = "col-2-gif">
+                    <img src = "videos/store.gif">
+                </div>         
+            </div>
+        </div>
+    </section>
+
+    <section class = "products" id = "products">
+        <div class = "frame-container">
+            <img src = "images/frame-corner-3.png" class = "frame-corner">
+            <img src = "images/frame-corner-0.png" class = "frame-corner">
+        </div>
+        <h1>All Products</h1>
+        <div class="small-container">
+            <div class = "row">
+                <a class="col-3" href = "projects.html">
+                    <img src = "images/loli-pass-2.png">
+                    <h2>Loli Pass</h2>
+                    <p>$5.00</p>
+                </a>
+                <a class="col-3" href = "projects.html">
+                    <img src = "images/noidoi-t-shirt.png">
+                    <h2>Logo T-Shirt</h2>
+                    <p>$20.00</p>
+                </a>
+            </div>
+        </div>
+        <div class = "frame-container">
+            <img src = "images/frame-corner-2.png" class = "frame-corner">
+            <img src = "images/frame-corner-1.png" class = "frame-corner">
+        </div>
+    </section>
+
+    <section>
+        <div class = "end">
+            <div class = "icons">
+                <a href="home.html"><img src="images/logo2.png"></a>
+                <i class="fab fa-github" onclick = "window.open('https://github.com/Noidoi-Games','_blank')"></i>
+            </div>
+
+            <p>© 2022 Noidoi Games, Inc. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    <script>
+    $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+        } // End if
+    });
+    });
+    </script>
+
+    <script>
+
+        var nav = document.getElementById("nav");
+        function scroolAtTop(){
+            nav.style.transitionDuration = "0.2s";
+
+            if( window.pageYOffset > 0 ){
+                nav.style.backgroundColor = "rgba(23, 23, 23, 100)";
+            }
+            else nav.style.backgroundColor = "rgba(23, 23, 23, 0)";
+        }
+
+        var scroolInterval = setInterval(scroolAtTop, 0);
+
+        function toTop(){
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
